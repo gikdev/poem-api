@@ -1,0 +1,11 @@
+### Get list of all poems
+GET http://localhost:3000/poems
+
+### Get poem with an ID
+GET http://localhost:3000/poems?id=5
+
+### Get list of all poems including a word
+GET http://localhost:3000/poems?text=گفت
+
+### Get list of all Haafez poems
+GET http://localhost:3000/poems?poetId=0

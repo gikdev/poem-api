@@ -5,6 +5,13 @@ import { AppModule } from "./app/app.module"
 async function bootstrap() {
   const app = await NestFactory.create(AppModule)
 
+  // Enable CORS
+  app.enableCors({
+    origin: "*",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials: true,
+  })
+
   // Swagger Docs
   const config = new DocumentBuilder()
     .setTitle("Poems")
@@ -15,6 +22,6 @@ async function bootstrap() {
   const docFactory = () => SwaggerModule.createDocument(app, config)
   SwaggerModule.setup("docs", app, docFactory)
 
-  await app.listen(process.env.PORT ?? 3000)
+  await app.listen(3000, "0.0.0.0")
 }
 bootstrap()

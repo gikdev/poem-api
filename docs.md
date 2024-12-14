@@ -5,6 +5,6 @@
 ### Poems:
 
 - `/api/poems`
-- `?id: number`
-- `?text: string`
-- `?poetId: number`
+  - `?id: number`
+  - `?text: string`
+  - `?poetId: number`
